@@ -1,16 +1,16 @@
 
-resource "aws_iam_user" "lb" {
-  for_each = toset([
-    "user1",
-    "user2",
-    "user3"
-    ])
-  name = each.key
-}
+# resource "aws_iam_user" "lb" {
+#   for_each = toset([
+#     "user1",
+#     "user2",
+#     "user3"
+#     ])
+#   name = each.key
+# }
 
-resource "aws_iam_group" "hello" {
-  name = "develops"
-}
+# resource "aws_iam_group" "hello" {
+#   name = "develops"
+# }
 
 # resource "aws_iam_group_membership" "team" {
 #   name = "tf-testing-group-membership"
