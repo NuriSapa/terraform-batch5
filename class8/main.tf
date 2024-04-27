@@ -16,7 +16,7 @@ module "vpc"  {
     subnet3_name = "hello3"
     ports = [ 
          { from_port = 22, to_port = 22 },
-         { from_port = 80, to_port = 80 }  
+         { from_port = 80, to_port = 80 },  
          { from_port = 81, to_port = 81 }       #Provide list of ports 
     ]
 }
