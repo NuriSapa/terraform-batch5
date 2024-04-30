@@ -29,6 +29,10 @@ resource "aws_key_pair" "grp4-keypair" {
 
 resource "aws_vpc" "group-4" {
   cidr_block = var.vpc_cidr
+
+  tags = {
+    Name = var. vpc_name
+  }
 }
 
 resource "aws_subnet" "grp4-subnet-1" {
@@ -120,7 +124,7 @@ resource "aws_lb_listener" "app" {
 
   default_action {
     type             = "forward"
-    #target_group_arn = aws_lb_target_group.blue.arn
+
     forward {
       target_group {
         arn = aws_lb_target_group.blue.arn
@@ -138,20 +142,3 @@ resource "aws_lb_listener" "app" {
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
